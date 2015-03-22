@@ -1,4 +1,4 @@
-// Largest prime factor of the number 600851475143
+// 10001st prime number
 
 #include<iostream>
 #include<math.h>
@@ -19,17 +19,21 @@ bool isPrime(int n)
 
 int main()
 {
-  long n = 600851475143;
-  int highestPrime = 0;
-  for(int i=0; i<=sqrt(n); i++)
+  int num = 1;
+
+  int numOfPrimes = 0;
+  while(true)
   {
-    if(isPrime(i) && i>highestPrime && n%i== 0)
+    if(isPrime(num))
     {
-      highestPrime = i;
+      numOfPrimes++;
     }
+    if(numOfPrimes == 10001)
+    {
+      cout << num << endl;
+      return 0;
+    }
+    num++;
   }
-  cout << highestPrime << endl;
   return 0;
 }
-
-
