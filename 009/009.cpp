@@ -16,7 +16,9 @@ int main()
       for(int k=3; k<=1000; k++)
       {
         if((i*i + j*j == k*k) && (i+j+k==1000))
-        {  cout << i*j*k << endl;
+        {  
+          cout << "Triplet: " << i << " " << j << " " << k << endl;
+          cout << i*j*k << endl;
           return 0;
         }
       }
