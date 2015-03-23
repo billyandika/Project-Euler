@@ -1,32 +1,26 @@
-// Find the sum of all the primes below two million.
+// A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+// a^2 + b^2 = c^2
+// For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
+// There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+// Find the product abc.
 
 #include<iostream>
-#include<math.h>
 using namespace std;
-
-bool isPrime(int n)
-{
-  if(n <= 3)
-    return n > 1;
-  else if(n%2==0 || n%3==0)
-    return false;
-  else
-    for(int i=5; i*i <= n; i+= 6)
-      if(n%i == 0 || n%(i+2) == 0)
-        return false;
-  return true;
-}
 
 int main()
 {
-  long sum = 0;
-  for(int i=1; i<2000000; i++)
+  for(int i=1; i<=1000; i++)
   {
-    if(isPrime(i))
-      sum+=i;
+    for(int j=2; j<=1000; j++)
+    {
+      for(int k=3; k<=1000; k++)
+      {
+        if((i*i + j*j == k*k) && (i+j+k==1000))
+        {  cout << i*j*k << endl;
+          return 0;
+        }
+      }
+    }
   }
-  cout << sum << endl;
   return 0;
 }
-
-// Remember to use long to store large values.
