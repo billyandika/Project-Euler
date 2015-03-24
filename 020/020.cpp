@@ -4,7 +4,7 @@
 #include<string>
 using namespace std;
 
-double factorial(double n)
+double factorial(int n)
 {
   if(n==0) return 1;
   return n*factorial(n-1);
@@ -12,6 +12,8 @@ double factorial(double n)
 
 int main()
 {
+  // Might have to use bigger ints for this.
+  // Won't work with current implementation
   string s = to_string(factorial(100));
   cout << s << endl;
   int sum = 0;
